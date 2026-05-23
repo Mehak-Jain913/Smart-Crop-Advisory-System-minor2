@@ -10,7 +10,7 @@ export const Schemes = () => {
 
   useEffect(() => {
     axios
-      .post('http://localhost:5001/api/schemes')
+      .post('http://localhost:8080/api/schemes')
       .then((r) => {
         console.log('Schemes:', r.data);
         setRealschemes(r.data);

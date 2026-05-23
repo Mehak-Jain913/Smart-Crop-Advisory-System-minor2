@@ -18,7 +18,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'smartcrop_secret';
 const GEMINI_KEY = process.env.GEMINI_API_KEY;
 const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/smartcrop';
 
-// ─── Middleware ────────────────────────────────────────────────────────────────
+// Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173', credentials: true }));
 app.use(express.json({ limit: '10mb' }));
 console.log('🚀 Starting SmartCrop Backend...');
@@ -26,7 +26,7 @@ console.log('🚀 Starting SmartCrop Backend...');
 mongoose
   .connect(MONGO_URI)
   .then(() => console.log('✅ MongoDB connected:', MONGO_URI))
-  .catch((err) => console.error('❌ MongoDB error:', err.message));
+  .catch((err) => console.error(' MongoDB error:', err.message));
 
 // ─── Gemini AI ─────────────────────────────────────────────────────────────────
 const ai = new GoogleGenAI({ apiKey: GEMINI_KEY });

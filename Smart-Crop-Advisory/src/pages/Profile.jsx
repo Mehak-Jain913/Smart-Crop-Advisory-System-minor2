@@ -16,7 +16,7 @@ export const Profile = () => {
     phone: '+91 9876543210'
   });
   useEffect(()=>{
-    const res=axios.post('http://localhost:5001/profile',{
+    const res=axios.post('http://localhost:8080/profile',{
       email:email
     })
     .then((r)=>{
